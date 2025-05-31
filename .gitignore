@@ -1,0 +1,6 @@
+jobgenie_env/
+__pycache__/
+*.pyc
+.env
+*.sqlite3
+*.db
