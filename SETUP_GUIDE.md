@@ -63,21 +63,24 @@ pip install spacy>=3.8.7
 python -m spacy download en_core_web_sm
 ```
 
-### 4. Set Up PostgreSQL Database
+# 1. Install PostgreSQL (if not already installed)
+sudo apt update
+sudo apt install postgresql postgresql-contrib
 
-#### Option A: Local PostgreSQL Installation
+# 2. Switch to the postgres user
+sudo -i -u postgres
 
-1. **Install PostgreSQL:**
-   - Download from https://www.postgresql.org/download/
-   - Follow installation instructions for your OS
+# 3. Open the PostgreSQL prompt
+psql
 
-2. **Create Database:**
-   ```sql
-   -- Connect to PostgreSQL as superuser
-   CREATE DATABASE jobgenie;
-   CREATE USER jobgenie_user WITH PASSWORD 'your_password';
-   GRANT ALL PRIVILEGES ON DATABASE jobgenie TO jobgenie_user;
-   ```
+# 4. Run the following SQL commands:
+CREATE DATABASE jobgenie;
+CREATE USER jobgenie_user WITH PASSWORD 'your_password';
+GRANT ALL PRIVILEGES ON DATABASE jobgenie TO jobgenie_user;
+
+# 5. Exit psql and return to your user
+\q
+exit
 
 #### Option B: Using Docker (Alternative)
 
